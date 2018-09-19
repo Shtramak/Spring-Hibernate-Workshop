@@ -14,13 +14,14 @@
     <modules>
         <module>mvc</module>
         <module>hibernate</module>
+        <module>aop</module>
     </modules>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.0.8.RELEASE</spring.version>
+        <spring.version>5.0.9.RELEASE</spring.version>
     </properties>
 
 </project>
