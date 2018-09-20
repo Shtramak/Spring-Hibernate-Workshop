@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyLoggingAspect {
 
-    @Before("execution(* add*())")
+    @Before("execution(* add*(com.shtramak.aop.entity.Account))")
     public void beforeAddAccount(){
         System.out.println("\n ======> Hi from @Before advice on addAccount() in" + this.getClass()+"\n");
     }
