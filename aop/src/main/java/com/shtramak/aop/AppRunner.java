@@ -12,7 +12,7 @@ public class AppRunner {
             AccountDao accountDao = context.getBean(AccountDao.class);
             accountDao.addAccount(new Account());
             MembershipDao membershipDao = context.getBean("membershipDao",MembershipDao.class);
-            membershipDao.addAccount();
+            membershipDao.addMembership(new Account(),true);
         }
     }
 }
