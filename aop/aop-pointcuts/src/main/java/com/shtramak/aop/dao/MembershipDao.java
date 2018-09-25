@@ -1,12 +1,24 @@
 package com.shtramak.aop.dao;
 
-import com.shtramak.aop.entity.Account;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MembershipDao {
-    public String addMembership(Account account, boolean flag) {
+
+    public boolean addMockMember() {
+
         System.out.println(getClass() + ": DOING STUFF: ADDING A MEMBERSHIP ACCOUNT");
-        return "Membership addMembership()";
+
+        return true;
     }
+
+    public void goToSleep() {
+
+        System.out.println(getClass() + ": I'm going to sleep now...");
+
+    }
+
 }
+
+
+

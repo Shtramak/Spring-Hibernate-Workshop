@@ -9,16 +9,40 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyLoggingAspect {
 
-    @Pointcut("execution(* com.shtramak.aop.dao.*.add*(..))")
-    public void forBeforeAnnotation(){}
-
-    @Before("forBeforeAnnotation()")
-    public void beforeAddAccount(){
-        System.out.println("\n ======> Hi from @Before advice on addMembership() in" + this.getClass()+"\n");
+    @Pointcut("execution(* com.shtramak.aop.dao.*.*(..))")
+    private void forDaoPackage() {
     }
 
-    @Before("forBeforeAnnotation()")
-    public void beforeAddSomeLogid(){
-        System.out.println("\n ======> Here is some big logic...");
+    @Pointcut("execution(* com.shtramak.aop.dao.*.get*(..))")
+    private void getter() {
     }
+
+    @Pointcut("execution(* com.shtramak.aop.dao.*.set*(..))")
+    private void setter() {
+    }
+
+    @Pointcut("forDaoPackage() && !(getter() || setter())")
+    private void forDaoPackageNoGetterSetter() {
+    }
+
+    @Before("forDaoPackageNoGetterSetter()")
+    public void beforeAddAccountAdvice() {
+        System.out.println("\n=====>>> Executing @Before advice on method");
+    }
+
+    @Before("forDaoPackageNoGetterSetter()")
+    public void performApiAnalytics() {
+        System.out.println("\n=====>>> Performing API analytics");
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
