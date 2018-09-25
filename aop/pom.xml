@@ -12,7 +12,12 @@
     </parent>
 
     <artifactId>aop</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>aop-pointcuts</module>
+        <module>aop-before-annotation</module>
+    </modules>
 
     <dependencies>
         <dependency>
